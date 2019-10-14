@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PointManagementScript : MonoBehaviour
 {
-    //the number of starting points, defaults to 100
+    //the number of starting points, defaults to 0
     [SerializeField]
     private int points = 0;
     private int HighScore = 0;
@@ -29,11 +29,11 @@ public class PointManagementScript : MonoBehaviour
         //draws the number of points to the screen
         GUI.backgroundColor = Color.gray;
         GUI.contentColor = Color.yellow;
-        GUI.Box(new Rect(10f, 70f, 150f, 25f), output());
+        GUI.Box(new Rect(10f, 70f, 150f, 40f), output());
     }
     private string output()
     {
-        return "Points: " + points.ToString();
+        return "High Score: " + HighScore.ToString() + "\nPoints: " + points.ToString();
     }
 
     /// <summary>
@@ -42,8 +42,9 @@ public class PointManagementScript : MonoBehaviour
     /// <param name="increase">the integern number of points to add</param>
     public void addPoints(int increase)
     {
-        points += increase + (int)(50 * GameObject.Find("TrollSpawner").GetComponent<TrollWaveManager>().waveCount);
-        HighScore += increase + (int)(50 * GameObject.Find("TrollSpawner").GetComponent<TrollWaveManager>().waveCount);
+        //Scales the amount of points gained as the waves increase
+        points += increase + (int)(25 * GameObject.Find("TrollSpawner").GetComponent<TrollWaveManager>().waveCount);
+        HighScore += increase + (int)(25 * GameObject.Find("TrollSpawner").GetComponent<TrollWaveManager>().waveCount);
     }
 
     /// <summary>
