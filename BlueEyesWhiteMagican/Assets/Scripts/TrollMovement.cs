@@ -13,7 +13,7 @@ public class TrollMovement : MonoBehaviour
     [SerializeField]
     float speed = 4.5f;
     [SerializeField]
-    float speed2 = 4;
+    float speed2 = 4.3f;
     [SerializeField]
     public Rigidbody2D rb;
     GameObject wizard;
@@ -33,11 +33,15 @@ public class TrollMovement : MonoBehaviour
     float trollLeashLength = 10f;
     
     
+    
 
 
     bool trollattack = false;
     [SerializeField]
     float trollattackduration = 0.45f;
+    [SerializeField]
+    float activeHitTimePercent = 0.5f;
+
     float trollattacktimer;
     bool hurtBoxThrown = false;
  
@@ -49,6 +53,7 @@ public class TrollMovement : MonoBehaviour
         velocity = new Vector2(0, 1);
         direction = new Vector2(1, 0);
 
+        trollattacktimer = trollattackduration;
 
         wizard = GameObject.Find("Wizard");
         wizardHealth = wizard.GetComponent<FixedMovment>();
@@ -100,17 +105,19 @@ public class TrollMovement : MonoBehaviour
             //if the troll is attacking
             trollattacktimer -= Time.deltaTime; //decrement attack timer
 
-            if (trollattacktimer > 0)
+            if (trollattacktimer > activeHitTimePercent * trollattackduration)
             {
                 //change the sprite to the wind up
                 GetComponentInChildren<SpriteRenderer>().sprite = attackSprites[0];
+                //print("Attacking"); //code for testing
             }
-            else if(trollattacktimer > -.2f)
+            else if(trollattacktimer > 0)
             {
                 //make the sprite the attack sprite
                 GetComponentInChildren<SpriteRenderer>().sprite = attackSprites[1];
                 if (!hurtBoxThrown)
                 {
+                    //print("Hurt box thrown");//testing code
                     //create the hurtbox
                     GameObject.Instantiate(hurtbox, gameObject.transform.position, Quaternion.Euler(0f, 0f, angle));
                     hurtBoxThrown = true;
@@ -120,6 +127,7 @@ public class TrollMovement : MonoBehaviour
             {
                 //on the last frame
                 //reset troll for next attack
+                trollattacktimer = trollattackduration;
                 hurtBoxThrown = false;
                 GetComponentInChildren<SpriteRenderer>().sprite = idle;
                 trollattack = false;

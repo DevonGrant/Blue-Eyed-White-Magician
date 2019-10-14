@@ -164,5 +164,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 6609140943608230524}
   speed: 10
-  offset: 0.03
+  offset: 0.1
   duration: 5
