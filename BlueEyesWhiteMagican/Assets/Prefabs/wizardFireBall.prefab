@@ -148,7 +148,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 2381495315526278547}
   speed: 7
-  sprite: {fileID: 2142531771708813981}
   offset: 0.1
   duration: 5
 --- !u!70 &8303117224606723775
@@ -164,6 +163,6 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.06, y: 0}
   m_Size: {x: 0.5, y: 0.3}
   m_Direction: 1
