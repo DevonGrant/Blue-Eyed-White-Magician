@@ -52,7 +52,7 @@ public class TrollHealth : MonoBehaviour
         //float rand = 1; //used for testing
 
         //check the condition
-        if(rand < 10)
+        if(rand < 25)
         {
             Instantiate(potion, GetComponent<Rigidbody2D>().position, Quaternion.identity);
         }

@@ -36,10 +36,10 @@ public class changeScene : MonoBehaviour
                 Input.GetKeyDown(KeyCode.Return) ||
                 Input.GetMouseButtonDown(0))
             {
-                SceneManager.LoadScene("SampleScene");
+                SceneManager.LoadScene("LevelLayout");
             }
         }
-        else if(SceneManager.GetActiveScene().name == "SampleScene")
+        else if(SceneManager.GetActiveScene().name == "LevelLayout")
         {        
             if (wizard.activeInHierarchy == false)
             {
