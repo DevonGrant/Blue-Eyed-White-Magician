@@ -23,6 +23,7 @@ public class TrollHurt : MonoBehaviour
     /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //print("Hit Wizard"); //code for testing
         //if the hit thing is the wizard
         if (collision.gameObject.name == "Wizard")
         {
