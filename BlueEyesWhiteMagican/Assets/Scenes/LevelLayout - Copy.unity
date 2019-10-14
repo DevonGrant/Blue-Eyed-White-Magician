@@ -34440,15 +34440,7 @@ PrefabInstance:
     - target: {fileID: 1259096962936308080, guid: 10cd9d66022b574498c0c042b83f65cb,
         type: 3}
       propertyPath: m_RootOrder
-<<<<<<< HEAD
-<<<<<<< HEAD
-      value: 11
-=======
-      value: 14
->>>>>>> c28c5b9ba972a61c46b8241ec2ac0e1fffe9fb81
-=======
       value: 10
->>>>>>> parent of c28c5b9... Updated level and start screen
       objectReference: {fileID: 0}
     - target: {fileID: 1259096962936308080, guid: 10cd9d66022b574498c0c042b83f65cb,
         type: 3}
