@@ -129,11 +129,11 @@ public class FixedMovment : MonoBehaviour
         //if movement is already to high don't generate a movement powerup
         if (movespeed < maxspeed)
         {
-            r = Random.Range(0, 3);
+            r = Random.Range(0, 4);
         }
         else
         {
-            r = Random.Range(0, 2);
+            r = Random.Range(0, 3);
         }
 
         //print(r);//enable for testing
@@ -143,9 +143,9 @@ public class FixedMovment : MonoBehaviour
         {
             //give health refil
             case 0:
-                health += .2f * maxHealth;
+                health += .5f * maxHealth;
 
-                if(health >maxHealth)
+                if(health > maxHealth)
                 {
                     health = maxHealth;
                 }
@@ -153,11 +153,15 @@ public class FixedMovment : MonoBehaviour
                 break;
             //increase max health
             case 1:
-                maxHealth += 10;
-                health += 10;
+                maxHealth += .25f * maxHealth;
                 break;
+            //increase Damage
+            //case 2:
+            //    maxHealth += 10;
+            //    health += 10;
+            //    break;
             //increase move speed
-            case 2:
+            case 3:
                 movespeed += .1f;
                 break;
         }

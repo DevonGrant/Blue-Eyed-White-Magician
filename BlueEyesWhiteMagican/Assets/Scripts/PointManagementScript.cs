@@ -6,7 +6,9 @@ public class PointManagementScript : MonoBehaviour
 {
     //the number of starting points, defaults to 100
     [SerializeField]
-    private int points =100;
+    private int points = 0;
+    private int HighScore = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +42,8 @@ public class PointManagementScript : MonoBehaviour
     /// <param name="increase">the integern number of points to add</param>
     public void addPoints(int increase)
     {
-        points += increase;
+        points += increase + (int)(50 * GameObject.Find("TrollSpawner").GetComponent<TrollWaveManager>().waveCount);
+        HighScore += increase + (int)(50 * GameObject.Find("TrollSpawner").GetComponent<TrollWaveManager>().waveCount);
     }
 
     /// <summary>

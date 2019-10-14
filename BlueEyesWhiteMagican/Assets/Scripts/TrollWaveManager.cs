@@ -12,9 +12,9 @@ public class TrollWaveManager : MonoBehaviour
     [SerializeField]
     GameObject enemy;//the enemy that is spawned
     [SerializeField]
-    int initialwavesize = 6; //size of the first wave
+    int initialwavesize = 3; //size of the first wave
     [SerializeField]
-    int waveIncrement = 2; //amount of enemies added per wave
+    int waveIncrement = 3; //amount of enemies added per wave
     [SerializeField]
     float waveDelay = 5f; //time between waves
     float waveDelayTimer;
