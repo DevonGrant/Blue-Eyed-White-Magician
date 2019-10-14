@@ -34,9 +34,13 @@ public class changeScene : MonoBehaviour
         if(SceneManager.GetActiveScene().name == "Start Menu")
         {
             //change scene based on user input
-            if (Input.anyKeyDown)
+            if (Input.GetKeyDown(KeyCode.P))
             {
                 SceneManager.LoadScene("LevelLayout");
+            }
+            if(Input.GetKeyDown(KeyCode.C))
+            {
+                SceneManager.LoadScene("Credits");
             }
         }
         else if(SceneManager.GetActiveScene().name == "LevelLayout")
@@ -66,5 +70,13 @@ public class changeScene : MonoBehaviour
                 SceneManager.LoadScene("Start Menu");
             }
         }
+        else if(SceneManager.GetActiveScene().name == "Credits")
+        {
+            if(Input.GetKeyDown(KeyCode.B))
+            {
+                SceneManager.LoadScene("Start Menu");
+            }
+        }
+
     }
 }

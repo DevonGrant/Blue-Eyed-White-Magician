@@ -78,7 +78,6 @@ public class FixedMovment : MonoBehaviour
         {
             //create the new wizard dead sprite when the players health is 0
             Instantiate(wizardDead, gameObject.transform.position, Quaternion.identity);
-
             gameObject.SetActive(false);
         }
 
@@ -118,7 +117,6 @@ public class FixedMovment : MonoBehaviour
         GUI.backgroundColor = Color.gray;
         GUI.contentColor = Color.yellow;
         GUI.Box(new Rect(10f, 10f, 150f, 50f), output());
-        
     }
 
     public void potionBuff()
