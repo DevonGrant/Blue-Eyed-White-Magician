@@ -66,6 +66,8 @@ MonoBehaviour:
   health: 100
   HealthMod: 0.1
   potion: {fileID: 8890926291931015570, guid: 3ce9aef1fa1322e4291ac0a1dc739913, type: 3}
+  trollDead: {fileID: 6251432847907398489, guid: bf5ac6244f47c64469ef5e6f1d38142d,
+    type: 3}
   pointValue: 100
 --- !u!114 &8863947214634736543
 MonoBehaviour:

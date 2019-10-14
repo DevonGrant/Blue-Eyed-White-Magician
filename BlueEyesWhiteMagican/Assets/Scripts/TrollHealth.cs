@@ -11,6 +11,7 @@ public class TrollHealth : MonoBehaviour
     public float health =100f;
     public float HealthMod = .1f;
     public GameObject potion;
+    public GameObject trollDead;
 
     [SerializeField]
     int pointValue = 100;
@@ -32,6 +33,8 @@ public class TrollHealth : MonoBehaviour
         {
             //check if it has a random drop
             randomDrop();
+
+            Instantiate(trollDead, gameObject.transform.position, Quaternion.identity);
 
             //tell the points manager that it has died and to add the points
             GameObject.Find("PointManager").GetComponent<PointManagementScript>().addPoints(pointValue);
