@@ -15,6 +15,8 @@ public class FixedMovment : MonoBehaviour
     [SerializeField]
     GameObject sprite;
 
+    public float DamageMultipler = 1f;
+
     public Vector2 direction = new Vector2();
     float angle;
 
@@ -141,7 +143,7 @@ public class FixedMovment : MonoBehaviour
         {
             //give health refil
             case 0:
-                health += .5f * maxHealth;
+                health += Mathf.Round(.5f * maxHealth);
 
                 if(health > maxHealth)
                 {
@@ -151,16 +153,15 @@ public class FixedMovment : MonoBehaviour
                 break;
             //increase max health
             case 1:
-                maxHealth += .25f * maxHealth;
+                maxHealth += Mathf.Round(.25f * maxHealth);
                 break;
-            //increase Damage
-            //case 2:
-            //    maxHealth += 10;
-            //    health += 10;
-            //    break;
+            //increase Damage multiplier
+            case 2:
+                DamageMultipler += Mathf.Round(DamageMultipler * .2f);
+                break;
             //increase move speed
             case 3:
-                movespeed += .1f;
+                movespeed += Mathf.Round(.1f * movespeed);
                 break;
         }
 
@@ -172,6 +173,6 @@ public class FixedMovment : MonoBehaviour
     private string output()
     {
         //displays health and current move speed
-        return "Health: " + health.ToString() + " / " + maxHealth.ToString() +"\nMove speed: " + movespeed.ToString(); 
+        return "Health: " + health.ToString() + " / " + maxHealth.ToString() + "\nMove speed: " + movespeed.ToString() + "\n Damage Multipler: " + DamageMultipler.ToString(); 
     }
 }

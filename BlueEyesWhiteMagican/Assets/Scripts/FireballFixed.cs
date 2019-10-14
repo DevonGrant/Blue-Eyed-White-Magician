@@ -9,6 +9,8 @@ public class FireballFixed : MonoBehaviour
     [SerializeField]
     float speed = 5f;//speed at wich the object moves
 
+    //Base Damage of the fireball attack
+    public int FireBallDamage = 25;
 
     [SerializeField]
     float offset = .03f; //how far in front of the player the sprite exists
@@ -59,7 +61,7 @@ public class FireballFixed : MonoBehaviour
     {
         if (collision.gameObject.name == "Troll")
         {
-            collision.gameObject.GetComponent<TrollHealth>().health -= 25;
+            collision.gameObject.GetComponent<TrollHealth>().health -= (FireBallDamage * Wizard.DamageMultipler);
         }
 
         if(collision.gameObject.name != "Wizard" && collision.gameObject.name != "Fireball" && collision.gameObject.name != "Sword" && collision.gameObject.name != "Grate" &&collision.gameObject.name != "Potion")

@@ -11,6 +11,9 @@ public class SwordScript : MonoBehaviour
 
     int trollcount = 2;
 
+    //Base Damage of the sword attack
+    public int SwordDamage = 50;
+
     [SerializeField]
     float offset = .03f; //how far in front of the player the sprite exists
     [SerializeField]
@@ -61,7 +64,7 @@ public class SwordScript : MonoBehaviour
         if (collision.gameObject.name == "Troll")
         {
             //change the troll health
-            collision.gameObject.GetComponent<TrollHealth>().health -= 25;
+            collision.gameObject.GetComponent<TrollHealth>().health -= (SwordDamage * Wizard.DamageMultipler);
             if (trollcount > 0)
             {
                 //decrement the troll counter
