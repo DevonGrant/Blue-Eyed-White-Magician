@@ -11,11 +11,14 @@ public class changeScene : MonoBehaviour
     bool sample;
     bool gameover;
     public GameObject wizard;
+    float timer;
+    bool startTimer;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        timer = 2f;
+        startTimer = false;
     }
 
     // Update is called once per frame
@@ -31,10 +34,7 @@ public class changeScene : MonoBehaviour
         if(SceneManager.GetActiveScene().name == "Start Menu")
         {
             //change scene based on user input
-            if (Input.GetKeyDown(KeyCode.P) ||
-                Input.GetKeyDown(KeyCode.Space) ||
-                Input.GetKeyDown(KeyCode.Return) ||
-                Input.GetMouseButtonDown(0))
+            if (Input.anyKeyDown)
             {
                 SceneManager.LoadScene("LevelLayout");
             }
@@ -43,21 +43,25 @@ public class changeScene : MonoBehaviour
         {        
             if (wizard.activeInHierarchy == false)
             {
-                //change the scene based on user input
-                if (Input.GetKeyDown(KeyCode.R) ||
-                     Input.GetMouseButtonDown(0))
+                //set the timer to true
+                startTimer = true;
+
+                if(startTimer)
                 {
-                    SceneManager.LoadScene("Game Over");
-                }
+                    timer -= 1.0f * Time.deltaTime;
+
+                    if(timer <= 0.0f)
+                    {
+                        SceneManager.LoadScene("Game Over");
+                        startTimer = false;
+                    }
+                }           
             }
         }
         else if(SceneManager.GetActiveScene().name == "Game Over")
         {
             //change the scene based on user imput
-            if(Input.GetKeyDown(KeyCode.P) ||
-                Input.GetKeyDown(KeyCode.Space) ||
-                Input.GetKeyDown(KeyCode.Return) ||
-                Input.GetMouseButtonDown(0))
+            if(Input.GetKeyDown(KeyCode.R))
             {
                 SceneManager.LoadScene("Start Menu");
             }
