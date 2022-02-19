@@ -42,6 +42,10 @@ public class changeScene : MonoBehaviour
             {
                 SceneManager.LoadScene("Credits");
             }
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.Quit();
+            }
         }
         else if(SceneManager.GetActiveScene().name == "LevelLayout")
         {        
@@ -61,6 +65,10 @@ public class changeScene : MonoBehaviour
                     }
                 }           
             }
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.Quit();
+            }
         }
         else if(SceneManager.GetActiveScene().name == "Game Over")
         {
@@ -68,6 +76,10 @@ public class changeScene : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.R))
             {
                 SceneManager.LoadScene("Start Menu");
+            }
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.Quit();
             }
         }
         else if(SceneManager.GetActiveScene().name == "Credits")

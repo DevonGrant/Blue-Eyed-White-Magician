@@ -81,8 +81,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13a985509dcad0d4ebc46a9824da053e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4.5
-  speed2: 3
+  speed: 180
+  speed2: 120
   rb: {fileID: -8920478654655458003}
   sprite: {fileID: 3313708140638880271}
   attackSprites:
