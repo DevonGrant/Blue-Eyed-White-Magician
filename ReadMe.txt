@@ -1,0 +1,1 @@
+Game is located at: BlueEyesWhiteMagican\Build\BlueEyesWhiteMagican.exe
